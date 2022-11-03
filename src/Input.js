@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import addItem from "./redux/actions"
+// import addItem from "./redux/actions"
+// import { addItem } from "./reduxToolkit/reducer";
+import { addItem } from "./reduxToolkit/toolkitSlice";
 
 export default function Input () {
   const [item, setItem] = useState('');
@@ -8,6 +10,7 @@ export default function Input () {
   function handleClick(e){
     e.preventDefault();
     dispatch(addItem(item))
+    setItem('')
   }
 
   return (
